@@ -1,0 +1,132 @@
+@import '../styles/variables';
+
+.timerWrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/bg.jpg");
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Dancing Script', cursive;
+}
+
+.timerStatus {
+  opacity: 0.8;
+  font-size: 7vh;
+  margin-bottom: 3vh;
+}
+
+.scoreboard,
+.score,
+.buttonBoard,
+.button {
+  border-radius: 5px;
+}
+
+.scoreboard {
+  width: 40vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: $color1;
+}
+
+.score {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 10vw;
+  height: 14vh;
+  margin-right: 2vw;
+  background: $color2;
+  font-size: 6vh;
+  color: white;
+
+  &:nth-of-type(2) {
+    font-size: 5vh;
+  }
+
+  &:last-child {
+    margin-right: 0;
+    font-size: 4vh;
+  }
+
+  &:before {
+    position: absolute;
+    top: -5vh;
+    left: 50%;
+    opacity: 0.5;
+    transform: translateX(-50%);
+    font-size: 3vh;
+    color: $color2;
+  }
+
+  &:nth-of-type(1):before {
+    content: 'm';
+  }
+
+  &:nth-of-type(2):before {
+    content: 's';
+  }
+
+  &:nth-of-type(3):before {
+    content: 'ms';
+  }
+}
+
+.number {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.buttonBoard {
+  display: flex;
+  align-items: center;
+  width: 40vw;
+  height: 7vh;
+  margin-top: 3vh;
+  justify-content: center;
+  background-color: $color1;
+  border-radius: 5px;
+}
+
+.button {
+  height: 70%;
+  width: 4vw;
+  font-size: 2vh;
+  border: none;
+  outline: none;
+  color: white;
+  background: $color2;
+  text-shadow: none;
+  font-family: inherit;
+  transition: transform 0.5s, opacity 0.3s, text-shadow 0.3s, font-size 0.3s;
+
+  &:first-child {
+    margin-right: 1vw;
+  }
+
+  &:last-child {
+    margin-left: 1vw;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+    text-shadow: -1px 0px 11px rgba(237, 237, 237, 0.21);
+    //color: #ff0019;
+    transform: scale(0.8);
+  }
+}
+
+.disabledButton {
+  opacity: 0.3;
+}
